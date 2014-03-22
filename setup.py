@@ -16,7 +16,7 @@ def read_file(name):
 setup(name='hypchat',
       version='0.12',
       description="Package for HipChat's v2 API",
-      long_description=read_file('README.rst'),
+      #long_description=read_file('README.rst'),
       author='James Bliss',
       author_email='james@ridersdiscount.com',
       url='https://github.com/RidersDiscountCom/HypChat',
