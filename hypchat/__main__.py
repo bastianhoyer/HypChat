@@ -1,8 +1,8 @@
 from . import *
 import os, os.path
-import ConfigParser
+import configparser
 
-config = ConfigParser.ConfigParser()
+config = configparser.ConfigParser()
 config.read([os.path.expanduser('~/.hypchat'), '/etc/hypchat'])
 AUTH_TOKEN = config.get('HipChat', 'token')
 

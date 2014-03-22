@@ -1,4 +1,4 @@
-from __future__ import absolute_import, division
+
 import json
 import re
 import datetime
@@ -54,7 +54,7 @@ class Linker(object):
 			if 'links' in obj:
 				klass = RestObject
 				if 'self' in obj['links']:
-					for p, c in _urls_to_objects.iteritems():
+					for p, c in _urls_to_objects.items():
 						if p.match(obj['links']['self']):
 							klass = c
 							break
@@ -71,7 +71,7 @@ class Linker(object):
 		"""
 		params = None
 		if expand is not None:
-			if isinstance(expand, basestring):
+			if isinstance(expand, str):
 				params = {'expand': expand}
 			else:
 				params = {'expand': ','.join(expand)}
@@ -202,10 +202,10 @@ class User(RestObject):
 
 	def save(self):
 		data = {}
-		for key, value in self.iteritems():
+		for key, value in self.items():
 			if key == 'presence' and isinstance(value, dict):
 				p = {}
-				for k,v in value.iteritems():
+				for k,v in value.items():
 					if k in ('status', 'show'):
 						p[k] = v
 				if len(p) != 0:
